@@ -112,6 +112,8 @@ See [DEVELOPMENT.md](DEVELOPMENT.md) for build instructions.
 
 ## Integration
 
+![](docs/assets/agentevals_pipeline.svg)
+
 ### Zero-Code (Recommended)
 
 Point any OTel-instrumented agent at the receiver. No SDK, no code changes:
