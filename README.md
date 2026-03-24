@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <a href="#quick-start">Quick Start</a> · <a href="#installation">Install</a> · <a href="docs/">Docs</a> · <a href="#web-ui">Web UI</a> · <a href="https://discord.gg/cpveEn8Ah2">Discord</a> · <a href="#faq">FAQ</a> · <a href="CONTRIBUTING.md">Contributing</a>
+  <a href="#quick-start">Quick Start</a> · <a href="#installation">Install</a> · <a href="https://aevals.ai/docs/">Docs</a> · <a href="#web-ui">Web UI</a> · <a href="https://discord.gg/cpveEn8Ah2">Discord</a> · <a href="#faq">FAQ</a> · <a href="CONTRIBUTING.md">Contributing</a>
 </p>
 
 ---
