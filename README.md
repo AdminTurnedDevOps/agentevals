@@ -62,35 +62,7 @@ If you are working from a clone of this repo, use `uv run agentevals` instead.
 
 ## How It Works
 
-```
-                          ┌─────────────────────┐
-                          │   Your Agent (any    │
-                          │  OTel-instrumented   │
-                          │     framework)       │
-                          └──────────┬──────────┘
-                                     │ OTel traces
-                                     ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                         agentevals                              │
-│                                                                 │
-│   ┌──────────┐    ┌────────────┐    ┌───────────────────────┐   │
-│   │  Loader   │──▶│  Converter  │──▶│   Evaluation Engine    │   │
-│   │          │    │            │    │                       │   │
-│   │ Jaeger   │    │ ADK spans  │    │ Built-in metrics      │   │
-│   │ OTLP     │    │ GenAI spans│    │ Custom evaluators     │   │
-│   │ Live     │    │    ──▶     │    │ LLM-based judges      │   │
-│   │ stream   │    │ Invocations│    │                       │   │
-│   └──────────┘    └────────────┘    └───────────┬───────────┘   │
-│                                                 │               │
-│              ┌──────────────────────────────────┼──────┐        │
-│              │              │                   │      │        │
-│              ▼              ▼                   ▼      ▼        │
-│           ┌─────┐    ┌──────────┐    ┌──────┐   ┌─────────┐    │
-│           │ CLI │    │  Web UI  │    │ REST │   │   MCP   │    │
-│           │     │    │          │    │ API  │   │  Server │    │
-│           └─────┘    └──────────┘    └──────┘   └─────────┘    │
-└─────────────────────────────────────────────────────────────────┘
-```
+![](docs/assets/agentevals_pipeline.svg)
 
 1. **Record** — your agent runs and emits OTel traces (or you export from Jaeger)
 2. **Load** — agentevals reads traces from files or a live OTLP stream
