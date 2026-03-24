@@ -12,8 +12,6 @@
   &nbsp;
   <a href="https://pypi.org/project/agentevals-cli/"><img src="https://img.shields.io/pypi/v/agentevals-cli?label=PyPI" alt="PyPI"></a>
   &nbsp;
-  <a href="https://pypi.org/project/agentevals-cli/"><img src="https://img.shields.io/pypi/pyversions/agentevals-cli" alt="Python"></a>
-  &nbsp;
   <a href="https://discord.gg/cpveEn8Ah2"><img src="https://img.shields.io/discord/1435836734666707190?label=Discord&logo=discord&logoColor=white&color=5865F2" alt="Discord"></a>
   &nbsp;
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-green.svg" alt="License"></a>
@@ -109,7 +107,7 @@ Works with any OTel-instrumented framework (LangChain, Strands, Google ADK, and 
 - [REST API Reference](#rest-api-reference)
 - [MCP Server](#mcp-server)
 - [Claude Code Skills](#claude-code-skills)
-- [Docs](#docs)
+- [Docs](https://aevals.ai/docs/)
 - [Development](#development)
 - [FAQ](#faq)
 
