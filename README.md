@@ -23,7 +23,7 @@
 
 ---
 
-## What is agentevals?
+## Why agentevals?
 
 Most evaluation tools require you to re-run your agent for every test. That's slow, expensive, and flaky — especially when your agent calls external APIs, tools, or models.
 
@@ -31,15 +31,35 @@ agentevals takes a different approach: **your agent runs once, emits OpenTelemet
 
 Works with any OTel-instrumented framework (LangChain, Strands, Google ADK, and others). Supports Jaeger JSON and OTLP trace formats, built-in and custom evaluators, and LLM-based judges.
 
----
-
-## Why agentevals?
-
 - **No re-running agents** — evaluate pre-recorded traces instead of re-invoking agents for every test case. Faster, cheaper, deterministic.
 - **Framework-agnostic** — works with any agent that emits OTel spans: LangChain, Strands, Google ADK, or your own custom agent.
 - **No cloud dependency** — everything runs locally. No AWS credentials, no GCP project, no API keys required for core evaluation (though GCP-based ADK evals are included if you want them).
 - **Extensible scoring** — built-in metrics (tool trajectory, response quality, hallucination detection) plus a simple stdin/stdout protocol for custom evaluators in any language.
 - **Multiple interfaces** — CLI for scripting and CI, Web UI for visual inspection, MCP server for AI-assisted evaluation, REST API for integration.
+
+---
+
+## Quick Start
+
+```bash
+pip install agentevals-cli
+```
+
+Run an evaluation against a sample trace:
+
+```bash
+agentevals run samples/helm.json \
+  --eval-set samples/eval_set_helm.json \
+  -m tool_trajectory_avg_score
+```
+
+List available evaluators:
+
+```bash
+agentevals evaluator list
+```
+
+If you are working from a clone of this repo, use `uv run agentevals` instead.
 
 ---
 
@@ -99,7 +119,6 @@ Works with any OTel-instrumented framework (LangChain, Strands, Google ADK, and 
 ## Contents
 
 - [Installation](#installation)
-- [Quick Start](#quick-start)
 - [Integration](#integration)
 - [CLI](#cli)
 - [Custom Evaluators](#custom-evaluators)
@@ -135,24 +154,6 @@ uv sync
 ```
 
 See [DEVELOPMENT.md](DEVELOPMENT.md) for build instructions.
-
-## Quick Start
-
-Examples use `agentevals` on your PATH after `pip install agentevals-cli`. If you are working from a clone of this repo, use `uv run agentevals` instead.
-
-Run an evaluation against a sample trace:
-
-```bash
-agentevals run samples/helm.json \
-  --eval-set samples/eval_set_helm.json \
-  -m tool_trajectory_avg_score
-```
-
-List available evaluators:
-
-```bash
-agentevals evaluator list
-```
 
 ## Integration
 
