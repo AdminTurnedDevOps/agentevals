@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">Traces in. Agent quality out.</h1>
-<h3 align="center">Evaluate AI agent behavior from OpenTelemetry traces — without re-running the agent.</h3>
+<h3 align="center">Evaluate AI agent behavior from OTel traces without re-running the agent.</h3>
 
 <br/>
 
