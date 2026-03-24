@@ -85,20 +85,6 @@ If you are working from a clone of this repo, use `uv run agentevals` instead.
 
 ---
 
-## Contents
-
-- [Installation](#installation)
-- [Integration](#integration)
-- [CLI](#cli)
-- [Custom Evaluators](#custom-evaluators)
-- [Web UI](#web-ui)
-- [REST API Reference](#rest-api-reference)
-- [MCP Server](#mcp-server)
-- [Claude Code Skills](#claude-code-skills)
-- [Docs](https://aevals.ai/docs/)
-- [Development](#development)
-- [FAQ](#faq)
-
 ## Installation
 
 **From PyPI** (recommended): the published package includes the **CLI**, **REST API**, and **embedded web UI**.
