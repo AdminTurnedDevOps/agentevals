@@ -14,11 +14,13 @@
   &nbsp;
   <a href="https://pypi.org/project/agentevals-cli/"><img src="https://img.shields.io/pypi/pyversions/agentevals-cli" alt="Python"></a>
   &nbsp;
+  <a href="https://discord.gg/cpveEn8Ah2"><img src="https://img.shields.io/discord/1435836734666707190?label=Discord&logo=discord&logoColor=white&color=5865F2" alt="Discord"></a>
+  &nbsp;
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-green.svg" alt="License"></a>
 </p>
 
 <p align="center">
-  <a href="#quick-start">Quick Start</a> · <a href="#installation">Install</a> · <a href="docs/">Docs</a> · <a href="#web-ui">Web UI</a> · <a href="#faq">FAQ</a> · <a href="CONTRIBUTING.md">Contributing</a>
+  <a href="#quick-start">Quick Start</a> · <a href="#installation">Install</a> · <a href="docs/">Docs</a> · <a href="#web-ui">Web UI</a> · <a href="https://discord.gg/cpveEn8Ah2">Discord</a> · <a href="#faq">FAQ</a> · <a href="CONTRIBUTING.md">Contributing</a>
 </p>
 
 ---
