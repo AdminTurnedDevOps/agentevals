@@ -62,7 +62,7 @@ If you are working from a clone of this repo, use `uv run agentevals` instead.
 
 ## How It Works
 
-![](docs/assets/agentevals_pipeline.svg)
+![](docs/assets/agentevals_tldr_animated_v3.svg)
 
 1. **Record** — your agent runs and emits OTel traces (or you export from Jaeger)
 2. **Load** — agentevals reads traces from files or a live OTLP stream
