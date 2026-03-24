@@ -2,16 +2,99 @@
   <img src="docs/assets/logo.png" alt="agentevals" width="420" />
 </p>
 
-`agentevals` evaluates AI agent behavior from OpenTelemetry traces, without re-running the agent. Record once, score as many times as you want.
+<h1 align="center">Record once. Score forever.</h1>
+<h3 align="center">Evaluate AI agent behavior from OpenTelemetry traces — without re-running the agent.</h3>
+
+<br/>
+
+<p align="center">
+  <a href="https://github.com/agentevals-dev/agentevals/stargazers"><img src="https://img.shields.io/github/stars/agentevals-dev/agentevals?style=social" alt="GitHub Stars"></a>
+  &nbsp;
+  <a href="https://pypi.org/project/agentevals-cli/"><img src="https://img.shields.io/pypi/v/agentevals-cli?label=PyPI" alt="PyPI"></a>
+  &nbsp;
+  <a href="https://pypi.org/project/agentevals-cli/"><img src="https://img.shields.io/pypi/pyversions/agentevals-cli" alt="Python"></a>
+  &nbsp;
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-green.svg" alt="License"></a>
+</p>
+
+<p align="center">
+  <a href="#quick-start">Quick Start</a> · <a href="#installation">Install</a> · <a href="docs/">Docs</a> · <a href="#web-ui">Web UI</a> · <a href="#faq">FAQ</a> · <a href="CONTRIBUTING.md">Contributing</a>
+</p>
+
+---
+
+## What is agentevals?
+
+Most evaluation tools require you to re-run your agent for every test. That's slow, expensive, and flaky — especially when your agent calls external APIs, tools, or models.
+
+agentevals takes a different approach: **your agent runs once, emits OpenTelemetry traces, and you score those traces as many times as you want** — with different metrics, different eval sets, or entirely custom evaluators. No re-execution, no cloud dependency, no vendor lock-in.
 
 Works with any OTel-instrumented framework (LangChain, Strands, Google ADK, and others). Supports Jaeger JSON and OTLP trace formats, built-in and custom evaluators, and LLM-based judges.
 
-- **CLI** for scripting and CI pipelines
-- **Web UI** for visual inspection and local developer experience
-- **MCP server** so MCP clients can run evaluations from a conversation
+---
+
+## Why agentevals?
+
+- **No re-running agents** — evaluate pre-recorded traces instead of re-invoking agents for every test case. Faster, cheaper, deterministic.
+- **Framework-agnostic** — works with any agent that emits OTel spans: LangChain, Strands, Google ADK, or your own custom agent.
+- **No cloud dependency** — everything runs locally. No AWS credentials, no GCP project, no API keys required for core evaluation (though GCP-based ADK evals are included if you want them).
+- **Extensible scoring** — built-in metrics (tool trajectory, response quality, hallucination detection) plus a simple stdin/stdout protocol for custom evaluators in any language.
+- **Multiple interfaces** — CLI for scripting and CI, Web UI for visual inspection, MCP server for AI-assisted evaluation, REST API for integration.
+
+---
+
+## How It Works
+
+```
+                          ┌─────────────────────┐
+                          │   Your Agent (any    │
+                          │  OTel-instrumented   │
+                          │     framework)       │
+                          └──────────┬──────────┘
+                                     │ OTel traces
+                                     ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                         agentevals                              │
+│                                                                 │
+│   ┌──────────┐    ┌────────────┐    ┌───────────────────────┐   │
+│   │  Loader   │──▶│  Converter  │──▶│   Evaluation Engine    │   │
+│   │          │    │            │    │                       │   │
+│   │ Jaeger   │    │ ADK spans  │    │ Built-in metrics      │   │
+│   │ OTLP     │    │ GenAI spans│    │ Custom evaluators     │   │
+│   │ Live     │    │    ──▶     │    │ LLM-based judges      │   │
+│   │ stream   │    │ Invocations│    │                       │   │
+│   └──────────┘    └────────────┘    └───────────┬───────────┘   │
+│                                                 │               │
+│              ┌──────────────────────────────────┼──────┐        │
+│              │              │                   │      │        │
+│              ▼              ▼                   ▼      ▼        │
+│           ┌─────┐    ┌──────────┐    ┌──────┐   ┌─────────┐    │
+│           │ CLI │    │  Web UI  │    │ REST │   │   MCP   │    │
+│           │     │    │          │    │ API  │   │  Server │    │
+│           └─────┘    └──────────┘    └──────┘   └─────────┘    │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+1. **Record** — your agent runs and emits OTel traces (or you export from Jaeger)
+2. **Load** — agentevals reads traces from files or a live OTLP stream
+3. **Score** — built-in metrics, custom evaluators, and LLM judges score agent behavior
+4. **Review** — see results in the CLI, Web UI, or through the MCP server
+
+---
+
+## Highlights
+
+- **Zero-code integration** — point any OTel-instrumented agent at `localhost:4318` and traces stream to the UI in real-time. No SDK, no code changes.
+- **Interactive Web UI** — upload traces, select metrics, inspect span trees, build eval sets visually, and watch live streaming sessions.
+- **Custom evaluators in any language** — write scoring logic in Python, JavaScript, TypeScript, or anything that reads stdin and writes stdout. Scaffold with `agentevals evaluator init`.
+- **Community evaluator registry** — share and reuse evaluators from GitHub with `type: remote` in your eval config.
+- **MCP server** — let Claude Code, Cursor, or any MCP client run evaluations, inspect sessions, and compare against golden references from a conversation.
+- **Claude Code skills** — `/eval` and `/inspect` slash commands for scoring and session debugging, built into this repo.
 
 > [!IMPORTANT]
 > This project is under active development. Expect breaking changes.
+
+---
 
 ## Contents
 
