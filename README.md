@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/logo-color.png" alt="agentevals" width="420" />
+  <img src="docs/assets/logo.png" alt="agentevals" width="420" />
 </p>
 
 `agentevals` evaluates AI agent behavior from OpenTelemetry traces, without re-running the agent. Record once, score as many times as you want.
