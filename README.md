@@ -25,14 +25,14 @@
 
 ## Why agentevals?
 
-**agentevals scores pre-recorded and live OpenTelemetry traces instead.** Your agent runs once, and you evaluate the traces as many times as you want — different metrics, different eval sets, custom evaluators. Works with any OTel-instrumented framework (LangChain, Strands, Google ADK, and others).
+**agentevals scores pre-recorded and live OpenTelemetry traces instead.** Your agent runs once, and you evaluate the traces as many times as you want - different metrics, different eval sets, custom evaluators. Works with any OTel-instrumented framework (LangChain, Strands, Google ADK, and others).
 
-- **No re-execution** — faster, cheaper, deterministic
-- **Real-time visibility** — watch traces stream in as your agent runs, inspect tool calls and LLM interactions live in the browser
-- **Framework-agnostic** — any agent that emits OTel spans
-- **No cloud dependency** — everything runs locally
-- **Extensible** — built-in metrics + custom evaluators in any language
-- **Multiple interfaces** — CLI, Web UI, MCP server, REST API
+- **No re-execution**: faster, cheaper, deterministic
+- **Real-time visibility**: watch traces stream in as your agent runs, inspect tool calls and LLM interactions live in the browser
+- **Framework-agnostic**: any agent that emits OTel spans
+- **No cloud dependency**: everything runs locally
+- **Extensible**: built-in metrics + custom evaluators in any language
+- **Multiple interfaces**: CLI, Web UI, MCP server, REST API
 
 ---
 
