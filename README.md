@@ -25,8 +25,6 @@
 
 ## Why agentevals?
 
-Most evaluation tools re-run your agent for every test. That's slow, expensive, and flaky.
-
 **agentevals scores pre-recorded OpenTelemetry traces instead.** Your agent runs once, and you evaluate the traces as many times as you want — different metrics, different eval sets, custom evaluators. Works with any OTel-instrumented framework (LangChain, Strands, Google ADK, and others).
 
 - **No re-execution** — faster, cheaper, deterministic
